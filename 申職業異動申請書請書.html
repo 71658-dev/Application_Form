@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新竹市衛生局醫事相關人員執業異動申請書</title>
+    <link rel="stylesheet" href="./dist/output.css">
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+            background-color: #f3f4f6;
+            color: #000;
+        }
+        .form-container {
+            width: 21cm;
+            min-height: 29.7cm;
+            background: white;
+            margin: 20px auto;
+            padding: 1.5cm;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-input {
+            border: none;
+            border-bottom: 1px solid #000;
+            background: transparent;
+            outline: none;
+            padding: 0 4px;
+            text-align: center;
+        }
+        .form-input:focus {
+            border-bottom: 2px solid #2563eb;
+        }
+        
+        /* Table Styles */
+        .form-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000;
+            font-size: 14px;
+        }
+        .form-table th, .form-table td {
+            border: 1px solid #000;
+            padding: 6px;
+            vertical-align: middle;
+        }
+        .form-table th {
+            background-color: #f8fafc;
+            font-weight: normal;
+            text-align: center;
+            white-space: nowrap;
+        }
+        
+        /* Checkbox styling */
+        input[type="checkbox"], input[type="radio"] {
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+            vertical-align: text-bottom;
+            cursor: pointer;
+        }
+
+        .photo-box {
+            width: 3.5cm;
+            height: 4.5cm;
+            border: 1px dashed #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #666;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: #fff;
+        }
+
+        @media print {
+            body { background-color: white; margin: 0; }
+            .form-container { 
+                margin: 0; 
+                padding: 1cm; 
+                box-shadow: none; 
+                width: 100%; 
+                height: auto; 
+            }
+            .no-print { display: none !important; }
+            .form-input { border-bottom: 1px solid #000 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Print Button Bar -->
+    <div class="no-print bg-blue-600 text-white p-4 flex justify-between items-center sticky top-0 z-50">
+        <div>
+            <h1 class="font-bold text-lg">📝 互動式表單預覽</h1>
+            <p class="text-sm">請在下方填寫表單。填寫完成後可點擊右方按鈕列印或另存為 PDF。</p>
+        </div>
+        <button onclick="window.print()" class="bg-white text-blue-600 px-6 py-2 rounded-lg font-bold shadow hover:bg-gray-100 transition">
+            🖨️ 列印 / 儲存為 PDF
+        </button>
+    </div>
+
+    <!-- Form A4 Container -->
+    <div class="form-container relative">
+        
+        <!-- Header Info -->
+        <div class="flex justify-between items-start text-sm mb-4">
+            <div>114.11.06版</div>
+            <div class="text-right flex flex-col gap-1">
+                <div>表單編號：<input type="text" class="form-input w-32"></div>
+                <div>檔號：<input type="text" class="form-input w-32"></div>
+                <div>保存年限：<input type="text" class="form-input w-32"></div>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-bold tracking-widest">新竹市衛生局醫事相關人員執業異動申請書</h1>
+        </div>
+
+        <div class="relative">
+            <!-- Main Info Table -->
+            <table class="form-table mb-4">
+                <tr>
+                    <th class="w-20">姓名<br><span class="text-xs">(簽章)</span></th>
+                    <td class="w-48"><input type="text" class="w-full outline-none"></td>
+                    <th class="w-20">申請日期</th>
+                    <td>
+                        民國 <input type="text" class="form-input w-10"> 年 
+                        <input type="text" class="form-input w-8"> 月 
+                        <input type="text" class="form-input w-8"> 日
+                    </td>
+                    <td rowspan="4" class="w-32 p-0 border-0 relative">
+                        <!-- Photo Placeholder taking up right space -->
+                        <div class="photo-box">
+                            <div>
+                                1吋照片<br>黏貼處<br>
+                                <span class="text-xs">(近三個月內)</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>身分證<br>字號</th>
+                    <td><input type="text" class="w-full outline-none uppercase"></td>
+                    <th>機構電話</th>
+                    <td><input type="text" class="w-full outline-none"></td>
+                </tr>
+                <tr>
+                    <th>出生<br>年月日</th>
+                    <td>
+                        民國 <input type="text" class="form-input w-8"> 年 
+                        <input type="text" class="form-input w-6"> 月 
+                        <input type="text" class="form-input w-6"> 日
+                    </td>
+                    <th>e-mail</th>
+                    <td><input type="email" class="w-full outline-none"></td>
+                </tr>
+                <tr>
+                    <th>聯絡電話</th>
+                    <td colspan="3">
+                        <div class="flex gap-4">
+                            <div class="flex-1">家：<input type="text" class="form-input w-3/4"></div>
+                            <div class="flex-1">手機：<input type="text" class="form-input w-3/4"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>受託人姓名</th>
+                    <td><input type="text" class="w-full outline-none"></td>
+                    <th>受託人電話</th>
+                    <td colspan="2"><input type="text" class="w-full outline-none"></td>
+                </tr>
+                <tr>
+                    <th>戶籍地址</th>
+                    <td colspan="4"><input type="text" class="w-full outline-none"></td>
+                </tr>
+                <tr>
+                    <th>聯絡地址</th>
+                    <td colspan="4"><input type="text" class="w-full outline-none"></td>
+                </tr>
+                <tr>
+                    <th>證書字號</th>
+                    <td colspan="4">
+                        <div class="flex items-center gap-4">
+                            <div><input type="text" class="form-input w-24"> 字第 <input type="text" class="form-input w-32"> 號</div>
+                            <div class="flex-1 text-right">專科證書：<input type="text" class="form-input w-24"> 專醫字第 <input type="text" class="form-input w-32"> 號</div>
+                        </div>
+                    </td>
+                </tr>
+                
+                <!-- Category Section -->
+                <tr>
+                    <th>申請類別</th>
+                    <td colspan="4">
+                        <div class="grid grid-cols-4 gap-2 text-sm">
+                            <label><input type="radio" name="category"> 醫師</label>
+                            <label><input type="radio" name="category"> 中醫師</label>
+                            <label><input type="radio" name="category"> 牙醫師</label>
+                            <label><input type="radio" name="category"> 護理師(護士)</label>
+                            
+                            <label><input type="radio" name="category"> 助產師(士)</label>
+                            <label><input type="radio" name="category"> 呼吸治療師</label>
+                            <label><input type="radio" name="category"> 藥師</label>
+                            <label><input type="radio" name="category"> 藥劑生</label>
+                            
+                            <label><input type="radio" name="category"> 營養師</label>
+                            <label><input type="radio" name="category"> 醫事檢驗師(生)</label>
+                            <label><input type="radio" name="category"> 醫事放射師(士)</label>
+                            <label><input type="radio" name="category"> 諮商心理師</label>
+                            
+                            <label><input type="radio" name="category"> 臨床心理師</label>
+                            <label><input type="radio" name="category"> 物理治療師(生)</label>
+                            <label><input type="radio" name="category"> 職能治療師(生)</label>
+                            <label><input type="radio" name="category"> 聽力師</label>
+                            
+                            <label><input type="radio" name="category"> 語言治療師</label>
+                            <label><input type="radio" name="category"> 牙體技術師(生)</label>
+                            <label><input type="radio" name="category"> 驗光師(生)</label>
+                            <label><input type="radio" name="category"> 其他 <input type="text" class="form-input w-16"></label>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Practice Info -->
+                <tr>
+                    <th>執業機構</th>
+                    <td colspan="4">
+                        <div class="flex flex-wrap gap-4 items-center">
+                            <div>科別：<input type="text" class="form-input w-24"></div>
+                            <div>機構名稱：<input type="text" class="form-input w-48"></div>
+                            <div>機構代碼：<input type="text" class="form-input w-32"></div>
+                            <div class="w-full mt-2">機構地址：<input type="text" class="form-input w-5/6"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Application Items & Documents Layout -->
+            <div class="flex border-2 border-black border-t-0 -mt-4">
+                <!-- Left: Application Items -->
+                <div class="w-2/3 border-r-2 border-black p-0">
+                    <table class="w-full text-sm">
+                        <tr>
+                            <td class="bg-gray-100 font-bold p-2 text-center border-b border-black">
+                                申請項目 <span class="text-red-600 font-normal text-xs">*非本人辦理需檢附13</span>
+                            </td>
+                            <td class="bg-gray-100 font-bold p-2 text-center border-b border-l border-black w-32">
+                                檢附文件代號
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="p-2 border-b border-black">
+                                <label class="font-bold"><input type="checkbox"> 執業(現歇業)登記</label>
+                                自 <input type="text" class="form-input w-8">年 <input type="text" class="form-input w-6">月 <input type="text" class="form-input w-6">日起
+                                <div class="text-xs text-gray-700 mt-1 pl-5">
+                                    ※藥師(生)同為藥商或管制藥品管理人，需檢附15。<br>
+                                    ※營養師需檢附14。<br>
+                                    ※護理人員執登於非醫事機構，需檢附16。<br>
+                                    ※歇業超過2年得附前1年內達1/6總積分證明，檢附12。
+                                </div>
+                            </td>
+                            <td class="p-2 border-b border-l border-black text-center font-bold tracking-widest">
+                                1.2.3.7.<br>10.11
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="p-2 border-b border-black">
+                                <label class="font-bold"><input type="checkbox"> 停業登記</label>
+                                自 <input type="text" class="form-input w-8">年<input type="text" class="form-input w-6">月<input type="text" class="form-input w-6">日 至 <input type="text" class="form-input w-8">年<input type="text" class="form-input w-6">月<input type="text" class="form-input w-6">日止
+                                <div class="text-xs text-gray-700 mt-1 pl-5">
+                                    ※藥師(生)同為藥商或管制藥品管理人，需檢附15。<br>
+                                    ※醫師、護理人員需檢附1。<br>
+                                    <span class="text-red-600">※連續停業超過一年則為歇業</span>
+                                </div>
+                            </td>
+                            <td class="p-2 border-b border-l border-black text-center font-bold tracking-widest">
+                                2.4.7.8
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="p-2 border-b border-black">
+                                <label class="font-bold"><input type="checkbox"> 復業(現停業)登記</label>
+                                自 <input type="text" class="form-input w-8">年 <input type="text" class="form-input w-6">月 <input type="text" class="form-input w-6">日起
+                                <div class="text-xs text-gray-700 mt-1 pl-5">
+                                    ※護理人員需檢附1。
+                                </div>
+                            </td>
+                            <td class="p-2 border-b border-l border-black text-center font-bold tracking-widest">
+                                2.4.7.8
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="p-2 border-b border-black">
+                                <label class="font-bold"><input type="checkbox"> 歇業(離職)</label> 日期自 <input type="text" class="form-input w-8">年 <input type="text" class="form-input w-6">月 <input type="text" class="form-input w-6">日
+                                <div class="text-xs text-gray-700 mt-1 pl-5">
+                                    ※藥師(生)同為藥商或管制藥品管理人，需檢附15。
+                                </div>
+                            </td>
+                            <td class="p-2 border-b border-l border-black text-center font-bold tracking-widest">
+                                1.2.6.7.8
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="p-2 border-b border-black flex flex-col gap-2">
+                                <div>
+                                    <label class="font-bold"><input type="checkbox"> (科別)變更</label>：原 <input type="text" class="form-input w-16"> 科變更為 <input type="text" class="form-input w-16"> 科
+                                </div>
+                                <div>
+                                    <label class="font-bold"><input type="checkbox"> (姓名)變更</label>：原 <input type="text" class="form-input w-16"> 變更為 <input type="text" class="form-input w-16">
+                                </div>
+                                <div>
+                                    <label class="font-bold"><input type="checkbox"> 機構變更</label> 原機構：<input type="text" class="form-input w-32"><br>
+                                    <span class="pl-24">新機構：<input type="text" class="form-input w-32"></span>
+                                </div>
+                                <div>
+                                    <label class="font-bold"><input type="checkbox"> 類別變更</label> 原類別：<input type="text" class="form-input w-32"><br>
+                                    <span class="pl-24">新類別：<input type="text" class="form-input w-32"></span>
+                                </div>
+                            </td>
+                            <td class="p-2 border-b border-l border-black text-center font-bold align-top pt-4">
+                                <div class="mb-6">1.2.5.7.8.<br>10.11</div>
+                                <div class="mb-6">1.2.3.6.7.<br>8.10.11</div>
+                                <div class="mt-8">1.2.5.7.8.<br>10.11</div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="p-2 border-b border-black">
+                                <label class="font-bold"><input type="checkbox"> 遺失補發</label>：原發照日期：<input type="text" class="form-input w-8">年<input type="text" class="form-input w-6">月<input type="text" class="form-input w-6">日<br>
+                                <label class="font-bold mt-1 inline-block"><input type="checkbox"> 損壞補發</label>：原發照日期：<input type="text" class="form-input w-8">年<input type="text" class="form-input w-6">月<input type="text" class="form-input w-6">日
+                            </td>
+                            <td class="p-2 border-b border-l border-black text-center font-bold">
+                                <div>2.7.9.10.11</div>
+                                <div class="mt-2">2.7.8.10.11</div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="p-2">
+                                <label class="font-bold"><input type="checkbox"> 到期換發</label>：原有效日期：<input type="text" class="form-input w-8">年<input type="text" class="form-input w-6">月<input type="text" class="form-input w-6">日
+                            </td>
+                            <td class="p-2 border-l border-black text-center font-bold tracking-widest">
+                                1.2.7.8.<br>10.11.12
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Right: Documents Checklist -->
+                <div class="w-1/3 p-0 bg-white">
+                    <div class="bg-gray-100 font-bold p-2 text-center border-b border-black">
+                        檢附文件種類<br>
+                        <span class="text-xs text-red-600">【以上文件皆需含影本】</span>
+                    </div>
+                    <div class="p-3 text-sm flex flex-col gap-2">
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>1. 公會證明文件 (執業、換照、變更、歇業、停業、復業)</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>2. 證書及專科證書正本 (影本)</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>3. 新服務機構在職證明</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>4. 服務機構停業、復業證明</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>5. 服務機構登記變更證明</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>6. 服務機構離職證明</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>7. 身分證正本 (影本)</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>8. 原執業執照</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>9. 執業執照遺失切結書</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>10. 規費 300 元</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>11. 照片 1 吋 2 張 (近照三個月)</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>12. 繼續教育學分證明</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>13. 委託書、被委託人身分證影本 (非本人辦理)</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>14. 一年內體檢報告 (需含A肝、X光、傷寒、手部皮膚)</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>15. 藥商許可執照 (設立許可證)</span>
+                        </label>
+                        <label class="flex items-start">
+                            <input type="checkbox" class="mt-1">
+                            <span>16. 非醫事機構的立案證明影本</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer (Official Use) -->
+            <div class="border-2 border-black border-t-0 p-4 pb-12 text-sm flex justify-between">
+                <div>
+                    <label><input type="checkbox"> 擬辦：經查符合規定，准予登記</label>
+                    <div class="mt-4 flex gap-8">
+                        <div>(決行)</div>
+                        <div>科長：</div>
+                        <div>承辦人：</div>
+                    </div>
+                </div>
+                <div class="pt-4 pr-16">
+                    簽收人：
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
